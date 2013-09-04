@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.4"/>
+<title>QMathGraph: Исходный файл src/graphvertice.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">QMathGraph
+   &#160;<span id="projectnumber">0.1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.4 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="annotated.html"><span>Структуры&#160;данных</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Указатель</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Структуры данных</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Функции</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Переменные</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Перечисления</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Элементы перечислений</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">graphvertice.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef GRAPHVERTICE_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define GRAPHVERTICE_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QPainter&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;QDebug&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;QObject&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;QGraphicsItem&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;QGraphicsTextItem&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="code" href="class_graph_vertice.html">   11</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_graph_vertice.html" title="Используется для представляения вершины графа. ">GraphVertice</a> : <span class="keyword">public</span> QObject, <span class="keyword">public</span> QGraphicsItem</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    Q_OBJECT</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    Q_INTERFACES( QGraphicsItem )</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="class_graph_vertice.html" title="Используется для представляения вершины графа. ">GraphVertice</a>(<span class="keyword">const</span> QString &amp;<a class="code" href="class_graph_vertice.html#acca3e3b55b9386e220a84b5af6de0fd6" title="Текст вершины ">name</a> = <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    ~<a class="code" href="class_graph_vertice.html" title="Используется для представляения вершины графа. ">GraphVertice</a>();</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_graph_vertice.html#ab70f0d280c32fe45c4bf146543150efa" title="Установка значения name. ">setName</a>(<span class="keyword">const</span> QString &amp;<a class="code" href="class_graph_vertice.html#acca3e3b55b9386e220a84b5af6de0fd6" title="Текст вершины ">name</a>);</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="code" href="class_graph_vertice.html#a32db13eacd1b8e35fc70bc548f1d335d">   23</a></span>&#160;    QString <a class="code" href="class_graph_vertice.html#a32db13eacd1b8e35fc70bc548f1d335d" title="Получение значения name. ">getName</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="class_graph_vertice.html#acca3e3b55b9386e220a84b5af6de0fd6" title="Текст вершины ">name</a>; }</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_graph_vertice.html#acd9a4be284bb6bf27868b6151ec84260" title="Установка позиции вершины на сцене GraphDrawer. ">setPosition</a>(<span class="keyword">const</span> QPointF &amp;pos);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    QPointF <a class="code" href="class_graph_vertice.html#a7245d2174df89f8bb5c99283c342370e" title="Получение текущей позиции вершины на сцене GraphDrawer. ">getPosition</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_graph_vertice.html#a1c05c10d5874e92bb9d00413daf22147" title="Установка значения regularPen. ">setPen</a>(<span class="keyword">const</span> QPen &amp;pen = QPen(Qt::black));</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    QPen <a class="code" href="class_graph_vertice.html#a1fdc8aa07da0a4ed39a86b27de22cb30" title="Получение значения regularPen. ">getPen</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_graph_vertice.html#a5c37bd14b6b74017fd2d3463d24ea06f" title="Установка значения selectedPen. ">setPenSelected</a>(<span class="keyword">const</span> QPen &amp;pen = QPen(Qt::black));</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    QPen <a class="code" href="class_graph_vertice.html#a5d29bebdab497c1d1ba02c262dedfa4b" title="Получение значения selectedPen. ">getPenSelected</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_graph_vertice.html#a5b6a424207e0dd9e9177ec708718ac0c" title="Установка значения pressedPen. ">setPenPressed</a>(<span class="keyword">const</span> QPen &amp;pen = QPen(Qt::black));</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    QPen <a class="code" href="class_graph_vertice.html#a2779d20afc6dc706443f531ed5293dc8" title="Получение значения pressedPen. ">getPenPressed</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_graph_vertice.html#a88e096624961cb85117902f4a22976b3" title="Устанавливает backgroundColor. ">setBackgroundColor</a>(<span class="keyword">const</span> QColor &amp;color = Qt::white);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    QColor <a class="code" href="class_graph_vertice.html#a1b19b18e16489881a3fdf2c45d531641" title="Получает значение backgroundColor. ">getBackgroundColor</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_graph_vertice.html#a5cd8cd078390d110c69feb41c8b0eca0" title="Устанавливает backgroundColorSelected. ">setBackgroundColorSelected</a>(<span class="keyword">const</span> QColor &amp;color = Qt::green);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    QColor <a class="code" href="class_graph_vertice.html#a41411b4b7693af647fc48e220b7cad46" title="Получает значение backgroundColorSelected. ">getBackgroundColorSelected</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_graph_vertice.html#a035a62d9bbf779cca73fac1d893b96cc" title="Устанавливает backgroundColorPressed. ">setBackgroundColorPressed</a>(<span class="keyword">const</span> QColor &amp;color = Qt::yellow);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    QColor <a class="code" href="class_graph_vertice.html#abe12171a8a0f920ad6cfa1e7618082f6" title="Получает значение backgroundColorPressed. ">getBackgroundColorPressed</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_graph_vertice.html#ade31012682d417de7a11c9ccb1032035" title="Устанавливает параметр pathSelected. ">selectPath</a>(<span class="keywordtype">bool</span> s = <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_graph_vertice.html#ac98108897594f0465a60b185ca8436a3" title="Устанавливает параметр selected. ">select</a>(<span class="keywordtype">bool</span> s = <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">bool</span> isPressed()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="class_graph_vertice.html#af88eaf941d230d08b15625357ac9da80" title="Параметр = true, если вершина нажата мышкой ">pressed</a>; }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">int</span> getWidth()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> boundingRect().width(); }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordtype">int</span> getHeight()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> boundingRect().height(); }</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordtype">void</span> mouseMoveEvent(QGraphicsSceneMouseEvent *event);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordtype">void</span> mousePressEvent(QGraphicsSceneMouseEvent *event);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">void</span> mouseReleaseEvent(QGraphicsSceneMouseEvent *event);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">void</span> mouseDoubleClickEvent(QGraphicsSceneMouseEvent *event);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    QRectF boundingRect() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">void</span> paint(QPainter *painter, <span class="keyword">const</span> QStyleOptionGraphicsItem *option, QWidget *widget);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="code" href="class_graph_vertice.html#ad26dbf2c9b2f061030697eb523110b65">   75</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_graph_vertice.html#ad26dbf2c9b2f061030697eb523110b65" title="Параметр = true, если выделен путь, в которой находится вершина ">pathSelected</a>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="code" href="class_graph_vertice.html#a4d5ef4ff5fe22b7bb06ea6ecb5a084da">   77</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_graph_vertice.html#a4d5ef4ff5fe22b7bb06ea6ecb5a084da" title="Параметр = true, если вершина выделена ">selected</a>;</div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="code" href="class_graph_vertice.html#af88eaf941d230d08b15625357ac9da80">   79</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_graph_vertice.html#af88eaf941d230d08b15625357ac9da80" title="Параметр = true, если вершина нажата мышкой ">pressed</a>;</div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="code" href="class_graph_vertice.html#acca3e3b55b9386e220a84b5af6de0fd6">   81</a></span>&#160;    QString <a class="code" href="class_graph_vertice.html#acca3e3b55b9386e220a84b5af6de0fd6" title="Текст вершины ">name</a>;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="code" href="class_graph_vertice.html#a2b9832789aeb227a01aca518b5bc18f3">   84</a></span>&#160;    QColor <a class="code" href="class_graph_vertice.html#a2b9832789aeb227a01aca518b5bc18f3" title="Цвет фона вершины в нормальном состоянии ">backgroundColor</a>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="code" href="class_graph_vertice.html#a79150f64064d493b5737b46a32155551">   86</a></span>&#160;    QColor <a class="code" href="class_graph_vertice.html#a79150f64064d493b5737b46a32155551" title="Цвет фона вершины в выделеном состоянии ">backgroundColorSelected</a>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="code" href="class_graph_vertice.html#a31d5658282c807bd32fd6b1ce58fb8c8">   88</a></span>&#160;    QColor <a class="code" href="class_graph_vertice.html#a31d5658282c807bd32fd6b1ce58fb8c8" title="Цвет фона вершины в состоянии нажатия мышкой ">backgroundColorPressed</a>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="code" href="class_graph_vertice.html#ab2a7c8657f018932156674671a6f17cb">   91</a></span>&#160;    QPen <a class="code" href="class_graph_vertice.html#ab2a7c8657f018932156674671a6f17cb" title="Графическое значение обводки вершины в нормальном состоянии ">regularPen</a>;</div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="code" href="class_graph_vertice.html#a18813b96259a71145231275d5ef8b4c6">   93</a></span>&#160;    QPen <a class="code" href="class_graph_vertice.html#a18813b96259a71145231275d5ef8b4c6" title="Графическое значение обводки вершины в выделеном состоянии ">selectedPen</a>;</div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="code" href="class_graph_vertice.html#a5b329c471458dd32e58f4e427033c0b5">   95</a></span>&#160;    QPen <a class="code" href="class_graph_vertice.html#a5b329c471458dd32e58f4e427033c0b5" title="Графическое значение обводки вершины в состоянии нажатия мышкой ">pressedPen</a>;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordtype">int</span> roundness(<span class="keywordtype">double</span> size) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;signals:</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordtype">void</span> verticePressed(<a class="code" href="class_graph_vertice.html" title="Используется для представляения вершины графа. ">GraphVertice</a> *square);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordtype">void</span> verticeReleased(<a class="code" href="class_graph_vertice.html" title="Используется для представляения вершины графа. ">GraphVertice</a> *square);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordtype">void</span> verticeUnselected(<a class="code" href="class_graph_vertice.html" title="Используется для представляения вершины графа. ">GraphVertice</a> *square);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordtype">void</span> verticeSelected(<a class="code" href="class_graph_vertice.html" title="Используется для представляения вершины графа. ">GraphVertice</a> *square);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordtype">void</span> verticeMoved(<a class="code" href="class_graph_vertice.html" title="Используется для представляения вершины графа. ">GraphVertice</a> *square, QPointF pos);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;};</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="preprocessor">#endif // GRAPHVERTICE_H</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по QMathGraph. Последние изменения: Вт 13 Авг 2013 21:26:21. Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.4
+</small></address>
+</body>
+</html>
